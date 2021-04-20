@@ -1,3 +1,3 @@
 # gameapp
 Play tennis with Jojo
-Gaaming app using javascript canvas.
+Gaming app using javascript canvas.
