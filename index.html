@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		
+		.button {		
+		border: 0.3vw solid red;
+		width: 25vw;
+		height: 25vw;	
+		background-color: #459648;
+		border-radius: 50%;
+		margin: auto;
+		display: flex;	
+		justify-content: center;
+		align-content: center;	
+		}
+	   .button > div {
+		font-size: 3vw;
+		font-style: normal ;
+		font-family: fantasy;	
+		padding-top: 10vw;
+		display: inline-flex;
+			
+		}
+		.dis{
+			text-align: center;
+			padding: 1%;
+			font-family: fantasy;
+			font-size: 3em;
+		}
+		.button:hover{
+			background-color: red;
+		}
+		</style>
+	
+</head>
+<body>	<a href="./game.html" style="text-decoration: none;">
+			<button id="button" class="button" >
+				<div id = "message">
+				Click Here!
+				</div>
+		    </button>
+		</a>	
+		<div id = "dis" class="dis">
+				Play Tennis with  Jojo
+		</div>
+        <div class="dis">
+			<input type="text" placeholder="      Number of games ?" id="myInput">
+			<button type="button" onclick="getInputValue();">Enter</button>
+        </div>			
+			<script>
+				const getInputValue = ()=> {
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("myInput").value;
+			result = parseInt(inputVal, 10);
+			if(! isNaN(result)){
+            localStorage["number"] = inputVal;			
+			document.getElementById("message").innerHTML= `Play ${inputVal} games with Jojo`;
+				const toPlay=()=>{window.location.href = "./game.html"; }
+			setTimeout(toPlay(), 4000);
+			}
+			else {
+				document.getElementById("dis").innerHTML="Please enter a real number !!!";
+				document.getElementById("message").innerHTML= "Default Games: 3";
+				localStorage["number"] = 3;
+
+			}
+
+		}
+
+			</script>	
+            
+        }
+				
+</body>
+</html>
